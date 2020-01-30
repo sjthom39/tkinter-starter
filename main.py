@@ -1,19 +1,45 @@
 # A starter program for Python with Tkinter
 
-from tkinter import * # import Tkinter library
-window = Tk()         # Create the application window
-
-# Add a label with the text "Hello"
-window.title("SCHOOL MONITOR.EXE")
-lbl = Label(window, text="Hello", font=("Courier New", 50))
-# Place the label in the window at 0, 0
-
-btn = Button(window, text="Click Me", bg="white", fg="blue")
-btn.grid(column=1, row=0)
-lbl.grid(column=0, row=0)
-def clicked():
+from tkinter import *
+from tkinter.ttk import *
+from ttkthemes import ThemedTk
  
-    lbl.configure(text="a virus has been installed")
+window = ThemedTk(theme="elegance")
+ 
+window.title("smiley face")
+ 
+window.geometry('350x200')
+chk_state = BooleanVar()
+ 
+chk_state.set(True) #set check state
+ 
+chk = Checkbutton(window, text='Choose', var=chk_state)
+ 
+chk.grid(column=0, row=0)
+combo = Combobox(window)
+ 
+combo['values']= (1, 2, 3, 4, 5, "Text")
+ 
+combo.current(1) #set the selected item
+ 
+combo.grid(column=0, row=0)
+ 
 
-
-window.mainloop()     # Keep the window open
+lbl = Label(window, text="hi there")
+ 
+lbl.grid(column=0, row=0)
+ 
+txt = Entry(window,width=10, state='disabled')
+ 
+txt.grid(column=1, row=0)
+ 
+def clicked():
+ res="welcome to happy space"+txt.get()
+ lbl.configure(text=res)  
+    
+ 
+# btn = Button(window, text="happy botton", command=clicked, bg="blue", fg="cyan")
+ 
+# btn.grid(column=2, row=0)
+ 
+window.mainloop()
