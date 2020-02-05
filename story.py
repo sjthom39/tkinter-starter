@@ -12,25 +12,27 @@ lbl = Label(window, text="start the story")
 lbl.pack()
 
 def changeText():
-    lbl.configure(text = "new text")
+    lbl.configure(text = "A strange event")
     # lbl['text'] = "new text"
 
 btn = Button(window, text="start botton", command=changeText)
+btn.geometry('50x20')
 btn.pack()
 
 chk_state = BooleanVar()
  
 chk_state.set(True) #set check state
  
-chk = Checkbutton(window, text='Choose', var=chk_state)
-chk.grid(column=0, row=0)
+chk = Checkbutton(window, text='welcome', var=chk_state)
+chk.pack()
 
-combo.grid(column=0, row=0)
+
 combo = Combobox(window)
+combo.pack()
  
-combo['values']= (1, 2, 3, 4, 5, "secret")
+combo['values']= (1, 2, 3, 4, 5, 6, 7, "secret")
  
-combo.current(1) #set the selected item
+combo.current(0) #set the selected item
  
 
  
